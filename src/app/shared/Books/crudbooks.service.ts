@@ -9,7 +9,7 @@ import { Router } from "@angular/router"
 import emailjs from "@emailjs/browser"
 import { saveAs } from 'file-saver';
 import { HttpClient } from "@angular/common/http"
-
+import jsPDF from 'jspdf';
 @Injectable({
   providedIn: 'root'
 })
@@ -234,4 +234,5 @@ export class CRUDbooksService  {
     })
     return books
   }
+
 }
