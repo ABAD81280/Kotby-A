@@ -62,8 +62,19 @@
                 <input type="text" class="form-control" [(ngModel)]="name" value="{{name}}" id="exampleFormControlInput15"   placeholder="Name">
             </div>
             <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">category</label>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        category({{category}})
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let a of thcategory" ><a class="dropdown-item" (click)="setTheCategory(a.category)">{{a.category}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">writer</label>
-                <input type="text" class="form-control" [(ngModel)]="writer" value="{{writer}}" id="exampleFormControlInput15"   placeholder="name@example.com">
+                <input type="text" class="form-control" [(ngModel)]="writer" value="{{writer}}" id="exampleFormControlInput15"   placeholder="">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">description</label>
