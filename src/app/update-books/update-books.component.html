@@ -1,0 +1,84 @@
+&nbsp;&nbsp;
+<a title="a" (click)="goBack()" style="height: 50px; width: 50px;" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg>
+</a>
+<br/>
+<br/>
+<div class="justify-content-center">
+    <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col">
+            <div class="card text-center mb-3" style="width: 45rem; background-color: #D7C0AE;">
+                <div class="card-body">
+                <h5 class="card-title">كل الكتب</h5>
+                <br/>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">img</th>
+                            <th scope="col">name</th>
+                            <th scope="col">writer</th>
+                            <th scope="col">times read</th>
+                            <th scope="col">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let a of allBooks|async">
+                            <th scope="row">#</th>
+                            <td><img src="{{a.url}}" alt="" style="height: 45px; width: 45px;" srcset=""></td>
+                            <td>{{a.name}}</td>
+                            <td>{{a.writer}}</td>
+                            <td>{{a.price}}</td>
+                            <td>
+                                <a  (click)="setValeUpdate(a.url,a.name,a.description,a.writer,a.category)" type="button" data-bs-toggle="modal" data-bs-target="#UpdateModal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="UpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Update book</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">name</label>
+                <input type="text" class="form-control" [(ngModel)]="name" value="{{name}}" id="exampleFormControlInput15"   placeholder="Name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">writer</label>
+                <input type="text" class="form-control" [(ngModel)]="writer" value="{{writer}}" id="exampleFormControlInput15"   placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="description" value="{{description}}"  rows="3"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="updateBook()" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

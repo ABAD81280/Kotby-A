@@ -1,0 +1,56 @@
+<br/>
+<br/>
+<br/>
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col">
+            <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #967E76; font-size:100px">Kotby</h1>
+        </div>
+    </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-5">
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; background-color: #D7C0AE;">
+                <div class="card-body ">
+                    <h1 class="card-title">Sign In</h1>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" [(ngModel)]="email" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">password</label>
+                        <input type="password" class="form-control" [(ngModel)]="pas" id="exampleFormControlInput2" placeholder="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">fullName</label>
+                        <input type="text" class="form-control" [(ngModel)]="fullName" id="exampleFormControlInput3" placeholder="fullName">
+                    </div>
+                    <a type="button" title="a" class="btn btn-secondary" name="a" (click)="AddUesrs()" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                    </a>
+                    <br/>
+                    <a (click)="gotoLogin()">you have account?</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

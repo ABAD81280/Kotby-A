@@ -1,0 +1,54 @@
+&nbsp;&nbsp;
+<a title="a" (click)="goBack()" style="height: 50px; width: 50px;" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg>
+</a>
+<br/>
+<br/>
+<br/>
+<div *ngIf="lodeing" class="d-flex justify-content-center m-5">
+    <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Book name:</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="name"  placeholder="Name">
+</div>
+<div class="mb-3">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            category({{category}})
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let a of thcategory" ><a class="dropdown-item" (click)="setTheCategory(a.category)">{{a.category}}</a></li>
+        </ul>
+      </div>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="description" rows="3"></textarea>
+</div>
+<div class="mb-3">
+    <label for="formFile" class="form-label">img the book</label>
+    <input class="form-control" type="file" title="gv"   (change)="setEventimg($event)"   id="formFile">
+    
+</div>
+<div class="mb-3">
+    <label for="formFile" class="form-label">PDF the book</label>
+    <input class="form-control" title="s" (change)="setEventpdf($event)"  type="file" id="formFile1">
+    
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">The writer</label>
+    <input type="email" class="form-control" [(ngModel)]="writer" id="exampleFormControlInput2" placeholder="The writer">
+</div>
+
+<a type="button" class="btn btn-outline-secondary" role="button" (click)="file1()" name="xd" value="dd"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+</svg>
+</a>
+<input type="button"  (click)="GotoHome()" value="Go to Home">
+
+

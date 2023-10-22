@@ -1,0 +1,10 @@
+{
+  "hosting": [
+    {
+      "target": "test3",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+  
+}
